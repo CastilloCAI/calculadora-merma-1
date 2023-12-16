@@ -23,7 +23,7 @@ body{
 }
 
 #detalle{
-    background: #005716;
+    background: linear-gradient(rgb(150, 12, 12), #005716);
     /* Con estas 3 lineas vamos a hacer que los divs queden lado a lado */
     width: 50%;
     height: 100%;
