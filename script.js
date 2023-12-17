@@ -8,25 +8,25 @@ function iniciar() {
 
 function clickcalcular(){
     var stock = document.getElementById("stock");
-    var pesoBruto = stock.value;
+    var pesoBruto = parseFloat(stock.value);
 
     var produ = document.getElementById("produ");
-    var pesoNeto = produ.value;
+    var pesoNeto = parseFloat(produ.value);
 
     var ventas = document.getElementById("ventas");
-    var ingresos = ventas.value;
+    var ingresos = parseFloat(ventas.value);
 
     var egreso = document.getElementById("egreso");
-    var salidas = egreso.value;
+    var salidas = parseFloat(egreso.value);
 
     var saldo = document.getElementById("saldo");
-    var stockActual = saldo.value;
+    var stockActual = parseFloat(saldo.value);
 
-    var sCont = (pesoBruto + pesoNeto) - ingresos;
-    var merma = (pesoBruto + pesoNeto)-(ingresos + salidas)- stockActual / (pesoNeto + pesoBruto) * 100;
-    var mPorc = merma / (pesoBruto + pesoNeto);
+    var sCont = (pesoBruto+pesoNeto-ingresos-salidas);
+    var merma = (sCont-stockActual);
+    var mPorc = ((merma/(pesoBruto+pesoNeto))*100);
     
-alert(sCont);
-alert(merma);
-alert(mPorc);
+alert("Saldo contable en kg: " + sCont);
+alert("Diferencia de stock en Kg: " + merma);
+alert("Porcentaje de merma: " + mPorc + "%");
 }
